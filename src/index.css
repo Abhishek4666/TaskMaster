@@ -1,0 +1,113 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  width: 400px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.addTask {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.addTask label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.addTask input[type="text"],
+.addTask input[type="date"] {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.addTask button {
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.addTask button:hover {
+  background-color: #45a049;
+}
+
+.editTask {
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.editTask label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.editTask input[type="text"] {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.editTask button {
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.editTask button:hover {
+  background-color: #45a049;
+}
+
+.taskItem {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.taskName{
+  margin-right: 5px;
+}
+
+.taskItem span {
+  flex: 1;
+}
+
+.taskItem-button button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  background-color: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.taskItem-button button:hover {
+  background-color: #ff7875;
+}
+
+.sortButton {
+  margin-top: 10px;
+}
