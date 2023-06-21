@@ -1,21 +1,43 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
+body{
+  background-color: #DFD5EC;
 }
 
-.form {
-  width: 400px;
+.main,
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.form,
+.login-form {
+  border: 1px solid black;
+  width: 450px;
   padding: 20px;
   background-color: #f5f5f5;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.addTask {
+.addTask,
+.editTask,
+.login-box {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.login-box label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"] {
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
   margin-bottom: 10px;
 }
 
@@ -27,12 +49,13 @@
 .addTask input[type="text"],
 .addTask input[type="date"] {
   padding: 8px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid #ccc;
   margin-bottom: 10px;
 }
 
-.addTask button {
+.addTask button,
+.login-box button {
   padding: 8px 16px;
   background-color: #4caf50;
   color: #fff;
@@ -41,14 +64,14 @@
   cursor: pointer;
 }
 
-.addTask button:hover {
+.addTask button:hover,
+.login-box button:hover {
   background-color: #45a049;
 }
 
 .editTask {
-  margin-top: 10px;
-  border-top: 1px solid #ccc;
-  padding-top: 10px;
+  /*margin-top: 10px;*/
+  /*padding-top: 10px;*/
 }
 
 .editTask label {
@@ -56,7 +79,8 @@
   margin-bottom: 5px;
 }
 
-.editTask input[type="text"] {
+.editTask input[type="text"],
+.editTask input[type="date"] {
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -83,15 +107,17 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ccc;
-  padding: 10px 0;
+  padding: 10px 0px;
 }
 
 .taskName{
-  margin-right: 5px;
+     width: 30%;
 }
 
-.taskItem span {
-  flex: 1;
+.taskDate{
+}
+
+.taskItem-button{
 }
 
 .taskItem-button button {
@@ -108,6 +134,24 @@
   background-color: #ff7875;
 }
 
+ul {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  max-height: 200px;
+}
+
 .sortButton {
-  margin-top: 10px;
+  width: 2.8em;
+  height: 2.2em;
+}
+
+.logout-button {
+  margin-bottom: auto;
+  width: 3em;
+  height: 2.5em;
+}
+
+.logout-button :hover {
+
 }

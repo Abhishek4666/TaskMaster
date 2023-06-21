@@ -7,8 +7,8 @@ export default function TaskList(props){
          {
            props.displayedTask.map(task => {
              return (
-               <div >
-                    <li  key={nanoid()} className="taskItem">
+               <div key={nanoid()}>
+                    <li   className="taskItem">
 
                         <span className="taskName">{task.taskName}</span>
                         <span className="taskDate">Due: {new Date(task.dueDate).toLocaleDateString()}</span>

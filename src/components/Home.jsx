@@ -1,14 +1,16 @@
 import React from "react"
 import { nanoid } from "nanoid"
-import TaskForm from "./components/TaskForm"
-import TaskList from "./components/TaskList"
-import {taskCollection} from "./firebase"
-import { addDoc, onSnapshot, doc, deleteDoc, updateDoc } from "firebase/firestore"
+import TaskForm from "./TaskForm"
+import TaskList from "./TaskList"
+import { db, auth } from "../firebase"
+import { collection, addDoc, onSnapshot, doc, deleteDoc, updateDoc } from "firebase/firestore"
+import { AuthContext } from "../AuthContext"
+import { signOut } from "firebase/auth"
 
-export default function App(){
+export default function Home(){
+  const {currentUser, setCurrentUser} = React.useContext(AuthContext)
 
-  // state variable to store list of tasks
-  const [taskList, setTaskList] = React.useState([])
+  const taskCollection = collection(db, currentUser.uid)
 
   // state variable that stores fetched taskList from firestore
   const [fetchList, setFetchList] = React.useState([])
@@ -49,7 +51,7 @@ export default function App(){
     setTask(prevTask => ({ ...prevTask, dueDate: value }))
   }
 
-  // adds the new task in `taskList` and reset the `task` variable
+
   async function addTask(event){
     if (task.taskName){
       try {
@@ -102,6 +104,15 @@ export default function App(){
 
  }
 
+ function logout(){
+   signOut(auth)
+     .then(() => {
+       setCurrentUser();
+       console.log("Logout Successful")
+     })
+     .catch((err) => console.log(err))
+ }
+
  const arr = sortTask()
  const displayedTask = sort ? arr : fetchList
   return(
@@ -130,7 +141,11 @@ export default function App(){
              />
 
         </div>
-
+        <button
+               className="logout-button"
+               onClick={logout}>
+               <i className="material-icons">logout</i>
+        </button>
     </div>
   )
 }
